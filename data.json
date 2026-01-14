@@ -1,0 +1,356 @@
+[
+{
+"id": 1,
+"category": "Hardware",
+"pt": "GeForce RTX Série 50",
+"en": "GeForce RTX 50 Series",
+"es": "GeForce RTX Series 50",
+"fr": "GeForce RTX série 50",
+"definition": {
+"pt": "Impulsionadas pela NVIDIA Blackwell, as Placas de Vídeo GeForce RTX™ Série 50 trazem recursos revolucionários a gamers e criadores. Equipado com um novo nível de potência massiva com IA, permite novas experiências e fidelidade gráfica de outro nível.",
+"en": "Powered by NVIDIA Blackwell, GeForce RTX™ 50 Series GPUs bring game-changing capabilities to gamers and creators. Equipped with a massive level of AI horsepower, the RTX 50 Series enables new experiences and next-level graphics fidelity.",
+"es": "Impulsadas por NVIDIA Blackwell, las tarjetas gráficas GeForce RTX™ Serie 50 aportan funciones revolucionarias a jugadores y creadores. Equipada con un nuevo y enorme nivel de potencia de IA, la serie RTX 50 permite vivir nuevas experiencias y disfrutar de una fidelidad gráfica de nivel superior.",
+"fr": "Alimentés par l'architecture NVIDIA Blackwell, les GPU GeForce RTX™ série 50 fournissent des capacités révolutionnaires aux joueurs et aux créateurs. La puissance d'IA phénoménale des modèles de la série RTX 50 vous aident à vivre des expériences inédites avec une fidélité graphique incomparable."
+},
+"mobile_definition": {
+"pt": "Impulsionadas pela NVIDIA Blackwell, as GPUs GeForce RTX™ Série 50 trazem potência de IA massiva e fidelidade gráfica de outro nível.",
+"en": "Powered by NVIDIA Blackwell, GeForce RTX™ 50 Series GPUs bring massive AI horsepower and next-level graphics fidelity.",
+"es": "Impulsadas por NVIDIA Blackwell, las GPU GeForce RTX™ Serie 50 aportan una enorme potencia de IA y una fidelidad gráfica superior.",
+"fr": "Alimentés par NVIDIA Blackwell, les GPU GeForce RTX™ série 50 offrent une puissance d'IA massive et une fidélité graphique inégalée."
+}
+},
+{
+"id": 2,
+"category": "Hardware",
+"pt": "GeForce RTX 5090",
+"en": "GeForce RTX 5090",
+"es": "GeForce RTX 5090",
+"fr": "GeForce RTX 5090",
+"definition": {
+"pt": "A NVIDIA® GeForce RTX™ 5090 é a GPU GeForce mais poderosa já feita, trazendo recursos revolucionários para gamers e criadores. Enfrente os modelos mais avançados e as cargas de trabalho criativas mais desafiadoras com uma potência de IA sem precedentes. Jogue com ray tracing completo e a menor latência possível.",
+"en": "The NVIDIA® GeForce RTX™ 5090 is the most powerful GeForce GPU ever made, bringing game-changing capabilities to gamers and creators. Tackle the most advanced models and most challenging creative workloads with unprecedented AI horsepower. Game with full ray tracing and the lowest latency.",
+"es": "NVIDIA® GeForce RTX™ 5090 es la GPU GeForce más potente jamás fabricada y aporta funciones revolucionarias a jugadores y creadores. Supera los modelos más avanzados y las cargas de trabajo creativas más exigentes con una potencia de IA sin precedentes. Juega con ray tracing completo y la latencia más baja posible.",
+"fr": "Carte graphique GeForce la plus puissante jamais conçue, la NVIDIA® GeForce RTX™ 5090 fournit des capacités révolutionnaires aux joueurs et aux créateurs. Prenez en charge les modèles les plus avancés et les charges de travail créatives les plus complexes grâce à une puissance brute sans précédent en matière d'IA. Jouez avec le ray tracing intégral et un rendu à faible latence."
+},
+"mobile_definition": {
+"pt": "A GPU GeForce mais poderosa já feita. Enfrente cargas de trabalho exigentes com potência de IA sem precedentes e ray tracing completo.",
+"en": "The most powerful GeForce GPU ever made. Tackle demanding workloads with unprecedented AI horsepower and full ray tracing.",
+"es": "La GPU GeForce más potente jamás fabricada. Supera cargas de trabajo exigentes con una potencia de IA sin precedentes y ray tracing completo.",
+"fr": "Le GPU GeForce le plus puissant jamais conçu. Gérez des charges de travail exigeantes avec une puissance d'IA sans précédent."
+}
+},
+{
+"id": 3,
+"category": "Thermal Design",
+"pt": "Revolucionário Design de Fluxo Duplo Contínuo Founders Edition",
+"en": "Revolutionary Double Flow Through Founders Edition Design",
+"es": "Revolucionario Diseño de Doble Flujo Continuo Founders Edition",
+"fr": "Design révolutionnaire double flux dans l'édition Founders Edition",
+"definition": {
+"pt": "PCBs avançados e design térmico que proporcionam o dobro do fluxo de ar em comparação com uma configuração tradicional de placa de vídeo. Uma câmara de vapor 3D com tubos de calor integrados e aletas ativas aumenta ainda mais o desempenho térmico.",
+"en": "Advanced PCBs and thermal design provides double the airflow of a traditional graphics card configuration. A 3D Vapor Chamber with integrated heat pipes and active fins further increases thermal performance. ‌The result is the highest-performance dual-slot graphics card cooler ever made.",
+"es": "PCB y diseño térmico avanzados que proporcionan el doble de flujo de aire en comparación con una configuración de tarjeta de video tradicional. Una cámara de vapor 3D con canales de calor integrados y alerones activos aumenta aún más el rendimiento térmico.",
+"fr": "Les PCB avancés et la conception thermique fournissent deux fois plus de flux d'air qu'une configuration de carte graphique traditionnelle. Une chambre à vapeur 3D avec caloducs intégrés et ailettes actives améliore encore les performances thermiques."
+},
+"mobile_definition": {
+"pt": "Design térmico avançado que proporciona o dobro do fluxo de ar e utiliza uma câmara de vapor 3D para máximo desempenho.",
+"en": "Advanced thermal design providing double the airflow and utilizing a 3D Vapor Chamber for maximum performance.",
+"es": "Diseño térmico avanzado que proporciona el doble de flujo de aire y utiliza una cámara de vapor 3D para un rendimiento máximo.",
+"fr": "Conception thermique avancée offrant deux fois plus de flux d'air et utilisant une chambre à vapeur 3D pour des performances maximales."
+}
+},
+{
+"id": 4,
+"category": "Software",
+"pt": "NVIDIA DLSS 4",
+"en": "NVIDIA DLSS 4",
+"es": "NVIDIA DLSS 4",
+"fr": "NVIDIA DLSS 4",
+"definition": {
+"pt": "DLSS é um avanço revolucionário em tecnologias de renderização neural que utiliza IA para aumentar o FPS, reduzir a latência e aprimorar a qualidade de imagem. O DLSS 4 traz o novo Multi Frame Generation e melhorias ao Super Resolution.",
+"en": "DLSS is a revolutionary suite of neural rendering technologies that uses AI to boost FPS, reduce latency, and improve image quality. The latest breakthrough, DLSS 4, brings new Multi Frame Generation and enhanced Ray Reconstruction and Super Resolution.",
+"es": "DLSS es un revolucionario conjunto de tecnologías de renderizado neuronal que utiliza la IA para aumentar los FPS, reducir la latencia y mejorar la calidad de imagen. El último avance, DLSS 4, trae una nueva Generación de Fotogramas múltiples y una Reconstrucción de Rayos y Super Resolución mejoradas.",
+"fr": "Le DLSS est une suite révolutionnaire de technologies de rendu neuronal qui exploite l’IA pour accélérer la fréquence d'images, réduire la latence et améliorer la qualité visuelle. Le DLSS 4 met à profit la puissance des GPU série 50 pour fournir une nouvelle fonctionnalité de génération multi-images."
+},
+"mobile_definition": {
+"pt": "Tecnologia de renderização neural que usa IA para aumentar FPS e qualidade. O DLSS 4 traz o novo Multi Frame Generation.",
+"en": "Neural rendering technology using AI to boost FPS and quality. DLSS 4 brings new Multi Frame Generation.",
+"es": "Tecnología de renderizado neuronal que usa IA para aumentar FPS y calidad. DLSS 4 trae la nueva Generación de Fotogramas múltiples.",
+"fr": "Technologie de rendu neuronal utilisant l'IA pour booster les FPS et la qualité. Le DLSS 4 apporte la génération multi-images."
+}
+},
+{
+"id": 5,
+"category": "Architecture",
+"pt": "Arquitetura NVIDIA Blackwell",
+"en": "NVIDIA Blackwell Architecture",
+"es": "Arquitectura NVIDIA Blackwell",
+"fr": "Architecture NVIDIA Blackwell",
+"definition": {
+"pt": "A plataforma definitiva para gamers e criadores. Inclui Tensor Cores de 5ª geração para desempenho máximo de IA, Ray Tracing Cores de 4ª geração para mega geometria e novos multiprocessadores de streaming otimizados para shaders neurais.",
+"en": "The Ultimate Platform for Gamers and Creators. Features Fifth-Gen Tensor Cores for max AI performance, Fourth-Gen RT Cores built for Mega Geometry, and new Streaming Multiprocessors optimized for neural shaders.",
+"es": "La Plataforma Definitiva para Jugadores y Creadores. Incluye Núcleos Tensor de 5.ª Generación para el máximo rendimiento de la IA, Núcleos RT de 4.ª Generación para la Geometría Mega y nuevos multiprocesadores de transmisión optimizados para el sombreado neuronal.",
+"fr": "La plateforme ultime pour les joueurs et les créateurs. Comprend des cœurs Tensor de 5e génération pour des performances d’IA maximales, des cœurs RT de 4e génération pour la méga-géométrie et de nouveaux multiprocesseurs de flux."
+},
+"mobile_definition": {
+"pt": "A plataforma definitiva com Tensor Cores de 5ª geração para IA e RT Cores de 4ª geração para geometria complexa.",
+"en": "The ultimate platform featuring 5th Gen Tensor Cores for AI and 4th Gen RT Cores for complex geometry.",
+"es": "La plataforma definitiva con Núcleos Tensor de 5.ª gen para IA y Núcleos RT de 4.ª gen para geometría compleja.",
+"fr": "La plateforme ultime avec cœurs Tensor 5e gén pour l'IA et cœurs RT 4e gén pour la géométrie complexe."
+}
+},
+{
+"id": 6,
+"category": "Software",
+"pt": "NVIDIA Reflex 2",
+"en": "NVIDIA Reflex 2",
+"es": "NVIDIA Reflex 2",
+"fr": "NVIDIA Reflex 2",
+"definition": {
+"pt": "Otimiza o pipeline gráfico para capacidade de resposta definitiva, proporcionando aquisição de alvos e tempos de reação mais rápidos. O Reflex 2 introduz o Frame Warp, que reduz ainda mais a latência com base no clique do mouse.",
+"en": "Optimizes the graphics pipeline for ultimate responsiveness, providing faster target acquisition and quicker reaction times. Reflex 2 introduces Frame Warp, which further reduces latency based on the latest mouse input.",
+"es": "Optimiza el canal de gráficos para ofrecer una mayor capacidad de respuesta, lo que permite acertar más rápido en los objetivos y reducir los tiempos de reacción. El nuevo Reflex 2 incorpora Frame Warp, que reduce aún más la latencia en función de los clics del mouse.",
+"fr": "Optimise le pipeline graphique pour une réactivité ultime, offrant une acquisition de cibles plus rapide et des temps de réaction plus courts. Reflex 2 introduit le Frame Warp, qui réduit encore davantage la latence."
+},
+"mobile_definition": {
+"pt": "Otimiza a resposta do sistema. O Reflex 2 introduz o Frame Warp para reduzir ainda mais a latência.",
+"en": "Optimizes system responsiveness. Reflex 2 introduces Frame Warp to further reduce latency.",
+"es": "Optimiza la respuesta del sistema. Reflex 2 introduce Frame Warp para reducir aún más la latencia.",
+"fr": "Optimise la réactivité du système. Reflex 2 introduit le Frame Warp pour réduire encore la latence."
+}
+},
+{
+"id": 7,
+"category": "Ecossystem",
+"pt": "NVIDIA Studio",
+"en": "NVIDIA Studio",
+"es": "NVIDIA Studio",
+"fr": "NVIDIA Studio",
+"definition": {
+"pt": "Sua vantagem criativa. Desbloqueia desempenho transformador em edição de vídeo, renderização 3D e design gráfico. Inclui acelerações RTX em apps de topo e drivers projetados para máxima estabilidade.",
+"en": "Your creative advantage. Unlocks transformative performance in video editing, 3D rendering, and graphic design. Experience RTX accelerations in top apps and world-class Studio drivers engineered for maximum stability.",
+"es": "Tu ventaja creativa. Proporciona un rendimiento transformador en la edición de video, el renderizado 3D y el diseño gráfico. Experimenta aceleraciones RTX en aplicaciones clave y drivers diseñados para la máxima estabilidad.",
+"fr": "Votre avantage créatif. Fournit des performances transformatrices pour le rendu 3D, le montage vidéo et la conception graphique. Profitez des accélérations RTX et de pilotes Studio conçus pour un maximum de stabilité."
+},
+"mobile_definition": {
+"pt": "Desempenho transformador em apps criativos com aceleração RTX e drivers estáveis.",
+"en": "Transformative performance in creative apps with RTX acceleration and stable drivers.",
+"es": "Rendimiento transformador en apps creativas con aceleración RTX y drivers estables.",
+"fr": "Performances transformatrices dans les applis créatives avec accélération RTX et pilotes stables."
+}
+},
+{
+"id": 8,
+"category": "Cloud Gaming",
+"pt": "GeForce NOW",
+"en": "GeForce NOW",
+"es": "GeForce NOW",
+"fr": "GeForce NOW",
+"definition": {
+"pt": "Conecta-se a lojas digitais para transmitir os jogos que você já possui. Transforma instantaneamente seu Notebook, Mac ou TV em um poderoso setup gamer com Ray Tracing e latência ultrabaixa.",
+"en": "Connects to digital PC game stores so you can stream the games you already own. Transforms your laptop, Mac, or TV into a powerful PC gaming rig with real-time Ray Tracing and ultra-low latency.",
+"es": "Se conecta a las tiendas digitales de juegos de PC para que puedas transmitir los juegos que ya tienes. Transforma instantáneamente tu laptop, Mac o TV en el potente equipo de juegos para PC con el que siempre has soñado.",
+"fr": "Se connecte à vos boutiques numériques favorites pour que vous puissiez streamer vos jeux. Transforme instantanément votre ordinateur portable, Mac ou TV en un puissant PC gaming."
+},
+"mobile_definition": {
+"pt": "Transmita seus jogos de PC com Ray Tracing e baixa latência em qualquer dispositivo.",
+"en": "Stream your PC games with Ray Tracing and low latency on any device.",
+"es": "Transmite tus juegos de PC con Ray Tracing y baja latencia en cualquier dispositivo.",
+"fr": "Streamez vos jeux PC avec Ray Tracing et faible latence sur n'importe quel appareil."
+}
+},
+{
+"id": 9,
+"category": "Hardware",
+"pt": "GeForce RTX 5080",
+"en": "GeForce RTX 5080",
+"es": "GeForce RTX 5080",
+"fr": "GeForce RTX 5080",
+"definition": {
+"pt": "Prepare-se para experiências revolucionárias com o DLSS 4 impulsionado por IA. Desenvolvido com NVIDIA Blackwell e equipado com memória super-rápida GDDR7 para rodar os jogos mais exigentes com desempenho impressionante.",
+"en": "Gear up for game-changing experiences with AI-powered DLSS 4. Built with NVIDIA Blackwell and blistering-fast GDDR7 memory, it lets you run the most graphically demanding games with stunning performance.",
+"es": "Prepárate para vivir experiencias revolucionarias con DLSS 4 impulsada por IA. Equipada con NVIDIA Blackwell y memoria ultrarrápida GDDR7, te permite ejecutar los juegos más exigentes con un rendimiento asombroso.",
+"fr": "Équipez-vous pour vivre des expériences exceptionnelles avec la technologie DLSS 4. Dotée de l'architecture Blackwell et d’une mémoire GDDR7 ultra-rapide pour faire tourner les jeux les plus intensifs."
+},
+"mobile_definition": {
+"pt": "Experiências revolucionárias com DLSS 4, arquitetura Blackwell e memória GDDR7 super-rápida.",
+"en": "Game-changing experiences with DLSS 4, Blackwell architecture, and ultra-fast GDDR7 memory.",
+"es": "Experiencias revolucionarias con DLSS 4, arquitectura Blackwell y memoria GDDR7 ultrarrápida.",
+"fr": "Expériences révolutionnaires avec DLSS 4, architecture Blackwell et mémoire GDDR7 ultra-rapide."
+}
+},
+{
+"id": 10,
+"category": "Hardware",
+"pt": "Família GeForce RTX 5070",
+"en": "GeForce RTX 5070 Family",
+"es": "Familia GeForce RTX 5070",
+"fr": "Gamme GeForce RTX 5070",
+"definition": {
+"pt": "Obtenha desempenho revolucionário com a RTX 5070 Ti e a RTX 5070. Jogue com altas taxas de quadros com o DLSS 4 e turbine sua criatividade com NVIDIA Studio.",
+"en": "Get game-changing performance with the GeForce RTX™ 5070 Ti and RTX 5070. Game at high frame rates with DLSS 4 and supercharge your creativity with NVIDIA Studio.",
+"es": "Obtén un rendimiento que cambia el juego con GeForce RTX 5070 Ti y RTX 5070. Juega a altas frecuencias de cuadro con DLSS 4 y acelera tu creatividad con NVIDIA Studio.",
+"fr": "Obtenez des performances révolutionnaires avec les cartes GeForce RTX™ 5070 Ti et RTX 5070. Jouez à des fréquences d’images élevées avec le DLSS 4."
+},
+"mobile_definition": {
+"pt": "Desempenho revolucionário e altas taxas de quadros com DLSS 4 e NVIDIA Studio.",
+"en": "Game-changing performance and high frame rates with DLSS 4 and NVIDIA Studio.",
+"es": "Rendimiento revolucionario y altas tasas de cuadros con DLSS 4 y NVIDIA Studio.",
+"fr": "Performances révolutionnaires et fréquences d'images élevées avec DLSS 4 et NVIDIA Studio."
+}
+},
+{
+"id": 11,
+"category": "Hardware",
+"pt": "Família GeForce RTX 5060",
+"en": "GeForce RTX 5060 Family",
+"es": "Familia GeForce RTX 5060",
+"fr": "Gamme GeForce RTX 5060",
+"definition": {
+"pt": "Permite recursos revolucionários de IA nos jogos e aplicações mais recentes. Multiplique o desempenho com NVIDIA DLSS 4 e aproveite gráficos realistas com ray tracing.",
+"en": "Enables game-changing AI capabilities in the latest games and apps. Multiply performance with NVIDIA DLSS 4 and enjoy realistic graphics with ray tracing.",
+"es": "Permite revolucionarias capacidades de IA en los últimos juegos y aplicaciones. Multiplica el rendimiento con NVIDIA DLSS 4 y disfruta de gráficos realistas con el ray tracing.",
+"fr": "Fournit des capacités d'IA révolutionnaires dans les applications et les jeux les plus récents. Accélérez les performances avec le NVIDIA DLSS 4."
+},
+"mobile_definition": {
+"pt": "Recursos de IA revolucionários, desempenho multiplicado com DLSS 4 e ray tracing realista.",
+"en": "Game-changing AI capabilities, multiplied performance with DLSS 4, and realistic ray tracing.",
+"es": "Capacidades de IA revolucionarias, rendimiento multiplicado con DLSS 4 y ray tracing realista.",
+"fr": "Capacités d'IA révolutionnaires, performances multipliées avec DLSS 4 et ray tracing réaliste."
+}
+},
+{
+"id": 12,
+"category": "Hardware",
+"pt": "Notebooks GeForce RTX Série 50",
+"en": "GeForce RTX 50 Series Laptops",
+"es": "Laptops GeForce RTX Serie 50",
+"fr": "PC portables GeForce RTX série 50",
+"definition": {
+"pt": "Trazem recursos revolucionários em designs finos e duradouros otimizados por Max-Q. Multiplique o desempenho com DLSS 4 e crie imagens mais rápido do que nunca com a potência de IA massiva.",
+"en": "Bring game-changing capabilities to gamers and creators in thin and long-lasting RTX laptops, optimized by Max-Q. Multiply performance with DLSS 4 and generate images at unprecedented speed.",
+"es": "Aportan funciones revolucionarias en laptops RTX delgadas, resistentes y optimizadas gracias a las tecnologías Max-Q. Multiplica el rendimiento con DLSS 4 y crea imágenes más rápido que nunca.",
+"fr": "GPU GeForce RTX™ série 50 fournissent des capacités révolutionnaires dans des designs fins et légers. Accélérez les performances visuelles avec le DLSS 4."
+},
+"mobile_definition": {
+"pt": "Recursos revolucionários em designs finos. Multiplique o desempenho com DLSS 4 e potência de IA.",
+"en": "Game-changing capabilities in thin designs. Multiply performance with DLSS 4 and AI power.",
+"es": "Funciones revolucionarias en diseños delgados. Multiplica el rendimiento con DLSS 4 y potencia de IA.",
+"fr": "Capacités révolutionnaires dans des designs fins. Multipliez les performances avec DLSS 4 et l'IA."
+}
+},
+{
+"id": 13,
+"category": "Technology",
+"pt": "Ray Tracing Completo",
+"en": "Full Ray Tracing",
+"es": "Ray Tracing Completo",
+"fr": "Ray tracing intégral",
+"definition": {
+"pt": "A arquitetura Blackwell desbloqueia o realismo do ray tracing completo (path tracing). Experimente visuais de qualidade cinematográfica com RTX Cores de 4ª geração e renderização neural.",
+"en": "NVIDIA Blackwell architecture unlocks the game-changing realism of full ray tracing. Experience cinematic quality visuals powered by fourth-gen RT Cores and breakthrough neural rendering.",
+"es": "La arquitectura NVIDIA Blackwell ofrece todo el esplendor y el realismo del Ray Tracing Completo. Disfruta de gráficos de calidad cinematográfica con núcleos RTX de 4.ª Generación.",
+"fr": "L’architecture NVIDIA Blackwell vous fournit un réalisme sans précédent avec une prise en charge avancée du ray tracing intégral et du rendu neuronal."
+},
+"mobile_definition": {
+"pt": "A arquitetura Blackwell desbloqueia o realismo do ray tracing completo para visuais cinematográficos.",
+"en": "Blackwell architecture unlocks the realism of full ray tracing for cinematic visuals.",
+"es": "La arquitectura Blackwell desbloqueia el realismo del ray tracing completo para imágenes cinematográficas.",
+"fr": "L'architecture Blackwell libère le réalisme du ray tracing intégral pour des visuels cinématographiques."
+}
+},
+{
+"id": 14,
+"category": "App",
+"pt": "NVIDIA Broadcast",
+"en": "NVIDIA Broadcast",
+"es": "NVIDIA Broadcast",
+"fr": "NVIDIA Broadcast",
+"definition": {
+"pt": "Seu estúdio em casa impulsionado por IA. Melhore suas lives e chamadas removendo ruídos de fundo e personalizando seu cenário com o toque de um botão.",
+"en": "Your AI-powered home studio. Take your livestreams and video calls to the next level with AI-enhanced voice and video. Remove background noise and customize your background instantly.",
+"es": "Tu Studio en Casa Impulsado por IA. Lleva tus retransmisiones y videollamadas al siguiente nivel con voz y video mejorados por IA. Elimina el ruido de fondo y personaliza el fondo.",
+"fr": "Votre studio personnel optimisé par l’IA. Faites passer vos livestreams et vos appels visio au niveau supérieur. Supprimez les bruits de fond et personnalisez votre arrière-plan."
+},
+"mobile_definition": {
+"pt": "Seu estúdio em casa com IA. Melhore lives e chamadas removendo ruídos e personalizando o fundo.",
+"en": "Your AI-powered home studio. Enhance streams and calls by removing noise and customizing backgrounds.",
+"es": "Tu estudio en casa con IA. Mejora transmisiones y llamadas eliminando ruido y personalizando el fondo.",
+"fr": "Votre studio personnel IA. Améliorez les streams et appels en supprimant le bruit et en personnalisant l'arrière-plan."
+}
+},
+{
+"id": 15,
+"category": "Technology",
+"pt": "RTX Video Super Resolution",
+"en": "RTX Video Super Resolution",
+"es": "RTX Video Super Resolución",
+"fr": "RTX Video Super Resolution",
+"definition": {
+"pt": "Usa IA para transformar seus vídeos no navegador, aprimorando automaticamente detalhes e eliminando artefatos de compressão para clareza impressionante em até 4K.",
+"en": "Uses AI to transform your videos in Chrome, Edge, or Firefox—automatically sharpening details and wiping out compression artifacts up to 4K resolution.",
+"es": "Utiliza IA para transformar tus videos en el navegador, mejorando automáticamente los detalles y eliminando los artefactos de compresión hasta 4K.",
+"fr": "Fait appel à l'IA pour optimiser la qualité des vidéos dans le navigateur grâce à des algorithmes qui améliorent la netteté et éliminent les artefacts jusqu’en 4K."
+},
+"mobile_definition": {
+"pt": "Usa IA para aprimorar vídeos no navegador, aumentando a clareza para até 4K.",
+"en": "Uses AI to enhance browser videos, sharpening details up to 4K.",
+"es": "Usa IA para mejorar videos en el navegador, aumentando la claridad hasta 4K.",
+"fr": "Utilise l'IA pour améliorer les vidéos du navigateur, augmentant la netteté jusqu'en 4K."
+}
+},
+{
+"id": 16,
+"category": "Technology",
+"pt": "NVIDIA RTX Remix",
+"en": "NVIDIA RTX Remix",
+"es": "NVIDIA RTX Remix",
+"fr": "NVIDIA RTX Remix",
+"definition": {
+"pt": "Plataforma de código aberto que permite a modders capturar assets de jogos clássicos, aprimorar materiais com IA generativa e criar remasterizações impressionantes com ray tracing completo.",
+"en": "Open-source platform that allows modders to easily capture game assets, enhance materials with generative AI, and create stunning remasters featuring full ray tracing.",
+"es": "Plataforma de código abierto que permite a los modders capturar recursos de juegos, mejorar materiales con IA generativa y crear impresionantes remasterizaciones RTX.",
+"fr": "Plateforme open-source permettant aux moddeurs de sauvegarder des ressources de jeu, d’améliorer le rendu avec l’IA et de créer des remasterisations RTX époustouflantes."
+},
+"mobile_definition": {
+"pt": "Plataforma para modders criarem remasterizações com IA generativa e ray tracing completo.",
+"en": "Platform for modders to create remasters with generative AI and full ray tracing.",
+"es": "Plataforma para que los modders creen remasterizaciones con IA generativa y ray tracing completo.",
+"fr": "Plateforme pour les moddeurs créant des remasters avec IA générative et ray tracing intégral."
+}
+},
+{
+"id": 17,
+"category": "Display",
+"pt": "NVIDIA G-SYNC",
+"en": "NVIDIA G-SYNC",
+"es": "NVIDIA G-SYNC",
+"fr": "NVIDIA G-SYNC",
+"definition": {
+"pt": "Suíte de tecnologias para monitores que oferece clareza de movimento aprimorada, imersão suave sem travamentos e taxas de quadros ultra-altas para jogos competitivos.",
+"en": "A suite of ultimate display technologies. Offers enhanced motion clarity, smooth tear-free immersion, and ultra-high frame rates.",
+"es": "Conjunto de tecnologías de visualización de última generación. Ofrecen claridad de movimiento mejorada, inmersión suave sin desgarros y frecuencias de cuadro ultrarrápidas.",
+"fr": "Suite de technologies d'affichage ultimes. Bénéficiez d'une clarté visuelle accrue, d'un rendu fluide sans saccade et des fréquences d’images ultra-élevées."
+},
+"mobile_definition": {
+"pt": "Tecnologias de monitor para clareza de movimento, sem travamentos e altas taxas de quadros.",
+"en": "Display technologies for motion clarity, tear-free gaming, and high frame rates.",
+"es": "Tecnologías de monitor para claridad de movimiento, sin desgarros y altas tasas de cuadros.",
+"fr": "Technologies d'affichage pour la clarté de mouvement, sans saccades et fréquences d'images élevées."
+}
+},
+{
+"id": 18,
+"category": "Marketing",
+"pt": "Frames Win Games",
+"en": "Frames Win Games",
+"es": "Frames Win Games",
+"fr": "La fluidité ajuda a ganhar",
+"definition": {
+"pt": "Jogos competitivos exigem taxas de quadros máximas. Obtenha a vantagem competitiva com a Série 50 e a menor latência com NVIDIA Reflex. Desempenho imbatível para a vitória.",
+"en": "Competitive games demand maximum frame rates. Get the competitive edge with GeForce RTX 50 Series and the lowest latency with NVIDIA Reflex. Frames Win Games.",
+"es": "Juegos competitivos exigen máximas frecuencias de cuadro. Consigue la ventaja competitiva con GeForce RTX Serie 50 y la latência más baja con NVIDIA Reflex. Los juegos ganan en fotogramas.",
+"fr": "Les jeux compétitifs exigent une fréquence d'images maximale. Prenez un avantage décisif avec GeForce RTX série 50 et une latence minimisée avec NVIDIA Reflex."
+}
+}
+]

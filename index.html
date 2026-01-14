@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVIDIA RTX Interactive Glossary</title>
+    <!-- Tailwind CSS for modern design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap');
+        body { 
+            font-family: 'Inter', sans-serif; 
+            scroll-behavior: smooth;
+        }
+        .custom-scroll::-webkit-scrollbar { width: 6px; }
+        .custom-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .custom-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+        
+        .term-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .copy-feedback {
+            animation: fadeInOut 2s ease-in-out forwards;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(10px); }
+            20% { opacity: 1; transform: translateY(0); }
+            80% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+
+    <!-- Security Overlay -->
+    <div id="loginOverlay" class="fixed inset-0 z-[100] bg-slate-900 flex items-center justify-center p-4 transition-opacity duration-500">
+        <div class="bg-white rounded-[2rem] p-8 max-w-md w-full shadow-2xl text-center">
+            <div class="bg-green-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <i data-lucide="lock" class="w-8 h-8 text-black"></i>
+            </div>
+            <h2 class="text-2xl font-black text-slate-900 mb-2">Security Check</h2>
+            <p class="text-slate-500 text-sm mb-8">Please enter the access password to view the glossary.</p>
+            
+            <input type="password" id="passwordInput" placeholder="Enter password" 
+                class="w-full px-6 py-4 rounded-xl bg-slate-50 border-none focus:ring-4 focus:ring-green-500/20 outline-none font-bold text-center mb-4 transition-all"
+                onkeydown="if(event.key === 'Enter') checkPassword()">
+                
+            <button onclick="checkPassword()" class="w-full bg-green-500 hover:bg-green-400 text-black font-black py-4 rounded-xl transition-all shadow-lg hover:shadow-green-500/25 active:scale-95">
+                UNLOCK ACCESS
+            </button>
+            <p id="loginError" class="text-red-500 text-xs font-bold mt-4 hidden animate-pulse">Incorrect password</p>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="fixed bottom-8 right-8 z-50 pointer-events-none"></div>
+
+    <!-- Header -->
+    <header class="bg-slate-900 text-white shadow-lg p-6 border-b border-green-500/40 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-green-500 p-2 rounded-xl shadow-[0_0_15px_rgba(34,197,94,0.3)]">
+                    <i data-lucide="cpu" class="w-8 h-8 text-black"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black leading-tight tracking-tighter">GeForce Glossary v2.0</h1>
+                    <p class="text-slate-400 text-[10px] font-mono tracking-[0.2em] uppercase opacity-70">Localizations for NALA</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3 bg-slate-800/50 backdrop-blur p-1.5 rounded-2xl border border-white/10">
+                <div class="flex items-center gap-2 px-3 border-r border-white/10">
+                    <i data-lucide="languages" class="w-4 h-4 text-green-500"></i>
+                    <span class="text-[10px] font-bold uppercase text-slate-400">Search In:</span>
+                </div>
+                <div id="langSelector" class="flex gap-1">
+                    <button onclick="changeSearchLang('en')" id="btn-en" class="lang-btn px-4 py-1.5 rounded-xl text-[10px] font-black transition-all bg-green-500 text-black shadow-sm transition-all">EN</button>
+                    <button onclick="changeSearchLang('pt')" id="btn-pt" class="lang-btn px-4 py-1.5 rounded-xl text-[10px] font-black transition-all hover:bg-white/10 text-white/70">PT</button>
+                    <button onclick="changeSearchLang('es')" id="btn-es" class="lang-btn px-4 py-1.5 rounded-xl text-[10px] font-black transition-all hover:bg-white/10 text-white/70">ES</button>
+                    <button onclick="changeSearchLang('fr')" id="btn-fr" class="lang-btn px-4 py-1.5 rounded-xl text-[10px] font-black transition-all hover:bg-white/10 text-white/70">FR</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8 w-full flex-grow">
+        <!-- Controls -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-10">
+            <div class="md:col-span-3 relative group">
+                <i data-lucide="search" class="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 w-5 h-5 group-focus-within:text-green-500 transition-colors"></i>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search terms..."
+                    class="w-full pl-14 pr-12 py-5 rounded-3xl border-none shadow-xl focus:ring-4 focus:ring-green-500/20 transition-all outline-none text-lg bg-white placeholder:text-slate-300"
+                    oninput="filterData()"
+                >
+                <button onclick="clearSearch()" id="clearSearchBtn" class="hidden absolute right-5 top-1/2 -translate-y-1/2 text-slate-300 hover:text-slate-500 transition-colors">
+                    <i data-lucide="x-circle" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <div class="relative">
+                <select
+                    id="categoryFilter"
+                    onchange="filterData()"
+                    class="w-full bg-white px-6 py-5 rounded-3xl shadow-xl border-none focus:ring-4 focus:ring-green-500/20 outline-none text-slate-600 appearance-none cursor-pointer font-bold text-sm tracking-tight"
+                >
+                    <option value="All">All Categories</option>
+                </select>
+                <i data-lucide="filter" class="absolute right-6 top-1/2 -translate-y-1/2 text-slate-300 w-5 h-5 pointer-events-none"></i>
+            </div>
+        </div>
+
+        <!-- Result Stats -->
+        <div class="mb-6 flex items-center justify-between px-2">
+            <p id="resultCount" class="text-xs font-bold text-slate-400 uppercase tracking-widest">Showing All Terms</p>
+            <div id="activeFilters" class="flex gap-2"></div>
+        </div>
+
+        <!-- Visual Error -->
+        <div id="errorBox" class="hidden bg-white border-2 border-red-100 text-red-600 p-8 rounded-[2rem] mb-8 flex items-center gap-6 shadow-2xl animate-in fade-in slide-in-from-top-4">
+            <div class="bg-red-50 p-4 rounded-2xl">
+                <i data-lucide="alert-octagon" class="w-10 h-10"></i>
+            </div>
+            <div>
+                <p class="font-black uppercase tracking-tight text-xl">Database Error</p>
+                <p class="text-sm text-slate-500 mt-1 italic">"data.json" not detected. Please ensure you are running this through a Local Server.</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <!-- Results Column -->
+            <div id="resultsColumn" class="lg:col-span-12 transition-all duration-500">
+                <div id="resultsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic cards -->
+                </div>
+            </div>
+
+            <!-- Details Column -->
+            <div id="detailsColumn" class="hidden lg:col-span-7 animate-in fade-in slide-in-from-right-8 duration-500 order-first lg:order-last">
+                <div id="detailsContent" class="bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 overflow-hidden sticky top-32">
+                    <!-- Dynamic details -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-auto py-10 px-6 text-center text-slate-300 text-[10px] font-mono tracking-[0.3em] uppercase border-t border-slate-100 bg-white">
+        <p>© 2026 NVIDIA Ecosystem Reference Tool • Built for Localisation Efficiency</p>
+    </footer>
+
+    <script>
+        let GLOSSARY_DATA = [];
+        let currentSearchLang = 'en'; 
+        let selectedId = null;
+
+        const langLabels = {
+            en: "English",
+            pt: "Portuguese",
+            es: "Spanish",
+            fr: "French (CA)"
+        };
+
+        // Initialize Keyboard Listeners
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape" && selectedId) closeDetails();
+        });
+
+        // Load data
+        async function init() {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) throw new Error("Fetch Error");
+                GLOSSARY_DATA = await response.json();
+                
+                populateCategories();
+                updateSearchPlaceholder();
+                filterData();
+            } catch (error) {
+                console.error("Loading error:", error);
+                document.getElementById('errorBox').classList.remove('hidden');
+                document.getElementById('searchInput').placeholder = "Database disconnected...";
+                document.getElementById('searchInput').disabled = true;
+            } finally {
+                lucide.createIcons();
+            }
+        }
+
+        function populateCategories() {
+            const select = document.getElementById('categoryFilter');
+            while (select.options.length > 1) select.remove(1);
+            
+            const categories = [...new Set(GLOSSARY_DATA.map(item => item.category))];
+            categories.sort().forEach(cat => {
+                if (cat) {
+                    const option = document.createElement('option');
+                    option.value = cat;
+                    option.textContent = cat;
+                    select.appendChild(option);
+                }
+            });
+        }
+
+        function changeSearchLang(lang) {
+            currentSearchLang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('bg-green-500', 'text-black', 'shadow-lg');
+                btn.classList.add('hover:bg-white/10', 'text-white/70');
+            });
+            const active = document.getElementById(`btn-${lang}`);
+            if (active) {
+                active.classList.add('bg-green-500', 'text-black', 'shadow-lg');
+                active.classList.remove('hover:bg-white/10', 'text-white/70');
+            }
+            updateSearchPlaceholder();
+            filterData();
+            
+            // Dynamic Update: Refresh details panel if one is open
+            if (selectedId) {
+                updateDetailsPanel(selectedId);
+            }
+        }
+
+        function clearSearch() {
+            document.getElementById('searchInput').value = '';
+            filterData();
+        }
+
+        function updateSearchPlaceholder() {
+            document.getElementById('searchInput').placeholder = `Find terms in ${langLabels[currentSearchLang]}...`;
+        }
+
+        function filterData() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const catFilter = document.getElementById('categoryFilter').value;
+            const clearBtn = document.getElementById('clearSearchBtn');
+
+            if (query.length > 0) clearBtn.classList.remove('hidden');
+            else clearBtn.classList.add('hidden');
+
+            const filtered = GLOSSARY_DATA.filter(item => {
+                const name = (item[currentSearchLang] || "").toLowerCase();
+                const matchesSearch = name.includes(query);
+                const matchesCat = catFilter === "All" || item.category === catFilter;
+                return matchesSearch && matchesCat;
+            });
+
+            document.getElementById('resultCount').textContent = 
+                query || catFilter !== "All" ? `${filtered.length} matching results` : `Showing all ${filtered.length} terms`;
+
+            renderList(filtered);
+        }
+
+        function copyToClipboard(text, element) {
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            // Toast feedback
+            const toast = document.createElement('div');
+            toast.className = 'copy-feedback bg-slate-900 text-white px-6 py-3 rounded-2xl shadow-2xl mb-2 flex items-center gap-3 border border-white/10';
+            toast.innerHTML = `<i data-lucide="check-circle-2" class="w-4 h-4 text-green-500"></i> <span class="text-xs font-bold uppercase tracking-wider">Copied to clipboard</span>`;
+            document.getElementById('toastContainer').appendChild(toast);
+            lucide.createIcons();
+            
+            setTimeout(() => toast.remove(), 2500);
+        }
+
+        function renderList(items) {
+            const container = document.getElementById('resultsContainer');
+            container.innerHTML = '';
+
+            if (items.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full py-32 text-center bg-white rounded-[3rem] border border-dashed border-slate-200">
+                        <div class="bg-slate-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-lucide="search-x" class="w-10 h-10 text-slate-200"></i>
+                        </div>
+                        <p class="text-slate-400 font-black uppercase tracking-widest text-sm">No matches found</p>
+                        <p class="text-slate-300 text-xs mt-2 italic underline cursor-pointer" onclick="clearSearch()">Clear filters and try again</p>
+                    </div>
+                `;
+                lucide.createIcons();
+                return;
+            }
+
+            items.forEach(item => {
+                const isSelected = selectedId === item.id;
+                const card = document.createElement('div');
+                card.className = `term-card p-8 rounded-[2rem] border-2 bg-white cursor-pointer hover:shadow-2xl hover:-translate-y-1.5 flex flex-col justify-between group ${
+                    isSelected ? 'border-green-500 shadow-xl ring-4 ring-green-500/10 scale-[1.02]' : 'border-slate-100'
+                }`;
+                card.onclick = () => showDetails(item.id);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="text-[10px] font-black uppercase tracking-[0.15em] text-green-600 bg-green-50 px-3 py-1.5 rounded-xl border border-green-100">${item.category}</span>
+                            <i data-lucide="plus" class="w-5 h-5 text-slate-200 group-hover:text-green-500 transition-all ${isSelected ? 'rotate-45 text-green-500' : ''}"></i>
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 leading-[1.1] tracking-tight group-hover:text-green-600 transition-colors">${item[currentSearchLang]}</h3>
+                    </div>
+                    <div class="mt-8 pt-6 border-t border-slate-50 flex gap-3 opacity-30 group-hover:opacity-100 transition-all">
+                        <span class="text-[9px] font-black text-slate-400 bg-slate-100 px-2 py-1 rounded-lg uppercase">EN</span>
+                        <span class="text-[9px] font-black text-slate-400 bg-slate-100 px-2 py-1 rounded-lg uppercase">PT</span>
+                        <span class="text-[9px] font-black text-slate-400 bg-slate-100 px-2 py-1 rounded-lg uppercase">ES</span>
+                        <span class="text-[9px] font-black text-slate-400 bg-slate-100 px-2 py-1 rounded-lg uppercase">FR</span>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+            lucide.createIcons();
+        }
+
+        function showDetails(id) {
+            if (selectedId === id) {
+                closeDetails();
+                return;
+            }
+            
+            selectedId = id;
+            updateDetailsPanel(id);
+            
+            // Layout update to split view
+            const resultsCol = document.getElementById('resultsColumn');
+            resultsCol.classList.replace('lg:col-span-12', 'lg:col-span-5');
+            
+            const container = document.getElementById('resultsContainer');
+            container.classList.replace('md:grid-cols-2', 'md:grid-cols-1');
+            container.classList.replace('lg:grid-cols-3', 'lg:grid-cols-1');
+            
+            document.getElementById('detailsColumn').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateDetailsPanel(id) {
+            const item = GLOSSARY_DATA.find(i => i.id === id);
+            if (!item) return;
+
+            const detailsContent = document.getElementById('detailsContent');
+            // Use mobile definition on smaller screens if available
+            const isMobile = window.innerWidth < 1024;
+            const defs = (isMobile && item.mobile_definition) ? item.mobile_definition : (item.definition || {});
+
+            detailsContent.innerHTML = `
+                <div class="bg-slate-900 text-white p-6 relative overflow-hidden">
+                    <div class="absolute -right-10 -top-10 bg-green-500/10 w-32 h-32 rounded-full blur-3xl"></div>
+                    <div class="flex justify-between items-start relative z-10">
+                        <div>
+                            <span class="text-[9px] font-black text-green-500 uppercase tracking-widest bg-green-500/10 px-2 py-0.5 rounded-lg border border-green-500/20">${item.category}</span>
+                            <h2 class="text-3xl font-black mt-2 leading-[1.1] tracking-tighter">${item[currentSearchLang]}</h2>
+                        </div>
+                        <button onclick="closeDetails()" class="p-2 bg-white/5 hover:bg-white/10 rounded-full text-white/40 hover:text-white transition-all">
+                            <i data-lucide="x" class="w-5 h-5"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="p-6 space-y-8">
+                    <!-- Term Mapping Section -->
+                    <section>
+                        <h4 class="text-[9px] font-black text-slate-300 uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
+                            <i data-lucide="globe" class="w-3 h-3 text-green-500"></i> Lexicon Mapping
+                        </h4>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                            ${Object.entries(langLabels).map(([key, label]) => `
+                                <div class="p-3 rounded-2xl border transition-all ${currentSearchLang === key ? 'border-green-200 bg-green-50/30' : 'border-slate-50 bg-white hover:border-slate-100'}">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <p class="text-[8px] font-black text-slate-400 uppercase tracking-widest">${key.toUpperCase()}</p>
+                                        <button onclick="copyToClipboard('${item[key]}', this)" class="text-slate-300 hover:text-green-500 transition-colors">
+                                            <i data-lucide="copy" class="w-3 h-3"></i>
+                                        </button>
+                                    </div>
+                                    <p class="font-bold text-slate-800 text-xs truncate" title="${item[key]}">${item[key] || '—'}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </section>
+
+                    <!-- Context Section -->
+                    <section>
+                        <h4 class="text-[9px] font-black text-slate-300 uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
+                            <i data-lucide="text-quote" class="w-3 h-3 text-green-500"></i> Regional context
+                        </h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            ${Object.entries(langLabels).map(([key, label]) => `
+                                <div class="relative group p-4 rounded-2xl border-l-4 transition-all ${currentSearchLang === key ? 'border-green-500 bg-green-50/50 shadow-sm' : 'border-slate-200 bg-slate-50 hover:bg-slate-100'}">
+                                    <div class="flex justify-between items-center mb-2">
+                                        <p class="text-[8px] font-black uppercase tracking-widest ${currentSearchLang === key ? 'text-green-600' : 'text-slate-400'}">${label}</p>
+                                        <button onclick="copyToClipboard('${defs[key]?.replace(/'/g, "\\'")}', this)" class="opacity-0 group-hover:opacity-100 text-slate-300 hover:text-green-500 transition-all">
+                                            <i data-lucide="copy" class="w-3 h-3"></i>
+                                        </button>
+                                    </div>
+                                    <p class="text-slate-600 italic text-[11px] leading-snug">"${defs[key] || 'Documentation pending localized review.'}"</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </section>
+                </div>
+
+                <div class="bg-slate-50/80 backdrop-blur-sm p-4 text-center border-t border-slate-100 flex items-center justify-center gap-3">
+                    <p class="text-slate-400 text-[8px] font-mono tracking-widest uppercase italic font-bold">
+                        REF_CORE_${item.id.toString().padStart(4, '0')}
+                    </p>
+                    <span class="w-0.5 h-0.5 rounded-full bg-slate-300"></span>
+                    <p class="text-[8px] font-mono text-slate-400 uppercase tracking-widest">NVIDIA_ Blackwell_Architecture_V1</p>
+                </div>
+            `;
+            
+            lucide.createIcons();
+            
+            // Refresh main list state to update highlights
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const catFilter = document.getElementById('categoryFilter').value;
+            const currentFiltered = GLOSSARY_DATA.filter(i => {
+                const name = (i[currentSearchLang] || "").toLowerCase();
+                return name.includes(query) && (catFilter === "All" || i.category === catFilter);
+            });
+            renderList(currentFiltered);
+        }
+
+        function closeDetails() {
+            selectedId = null;
+            const resultsCol = document.getElementById('resultsColumn');
+            const detailsCol = document.getElementById('detailsColumn');
+
+            resultsCol.classList.replace('lg:col-span-5', 'lg:col-span-12');
+            const container = document.getElementById('resultsContainer');
+            container.classList.replace('md:grid-cols-1', 'md:grid-cols-2');
+            container.classList.replace('lg:grid-cols-1', 'lg:grid-cols-3');
+            detailsCol.classList.add('hidden');
+            filterData();
+        }
+
+        async function sha256(message) {
+            const msgBuffer = new TextEncoder().encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        async function checkPassword() {
+            const input = document.getElementById('passwordInput').value;
+            const errorMsg = document.getElementById('loginError');
+            // Updated SHA-256 Hash
+            const targetHash = "63affc83ffe440e99b0ff44023b23e92489952e4fc6c51d8243c17e75bbe61f0";
+            
+            if (await sha256(input) === targetHash) {
+                const overlay = document.getElementById('loginOverlay');
+                overlay.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => overlay.remove(), 500);
+            } else {
+                errorMsg.classList.remove('hidden');
+                document.getElementById('passwordInput').classList.add('ring-2', 'ring-red-500');
+            }
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
