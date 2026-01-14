@@ -1,7 +1,7 @@
 An interactive, multilingual reference tool built for Localisation Efficiency. This application provides instant access to standardized terminology and marketing definitions for NVIDIA’s latest hardware and software ecosystems, including the GeForce RTX 50 Series and Blackwell Architecture.
 
 🚀 Overview
-The GeForce Glossary is designed for localization teams (NALA), developers, and marketing professionals who need consistent technical terminology across multiple languages. It serves as a single source of truth for product definitions, supporting English (EN), Portuguese (PT), Spanish (ES), and French (CA).
+The GeForce Glossary is designed for localization teams (NALA), partners and marketing professionals who need consistent technical terminology across multiple languages. It serves as a single source of truth for product definitions, supporting English (EN), Portuguese (PT), Spanish (ES), and French (CA).
 
 ✨ Key Features
 Multilingual Search: Search for terms in any of the four supported languages in real-time.
