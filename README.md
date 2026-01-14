@@ -31,5 +31,7 @@ Typography: Google Fonts (Inter).
 Plaintext
 
 ├── index.html    # Main application logic and UI
+
 ├── data.json     # Multilingual database of terms and definitions
+
 └── README.md     # Documentation
